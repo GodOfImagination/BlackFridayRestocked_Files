@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject ScreenMenu;
-    public GameObject ScreenControls;
+    public GameObject ScreenHowToPlay;
     private void Start()
     {
-        ScreenControls.SetActive(false);
+        ScreenHowToPlay.SetActive(false);
     }
 
     public void SceneLoader(int Number)
@@ -15,15 +15,15 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(Number);
     }
 
-    public void ButtonControls()
+    public void ButtonHowToPlay()
     {
         ScreenMenu.SetActive(false);
-        ScreenControls.SetActive(true);
+        ScreenHowToPlay.SetActive(true);
     }
     public void ButtonBack()
     {
         ScreenMenu.SetActive(true);
-        ScreenControls.SetActive(false);
+        ScreenHowToPlay.SetActive(false);
     }
 
     public void ButtonQuit()
