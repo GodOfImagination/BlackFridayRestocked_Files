@@ -18,13 +18,6 @@ public class PlayerCamera : MonoBehaviour
 
     public Transform PlayerController;
 
-    private void Start()
-    {
-        // Hide mouse and lock to screen center.
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
     private void Update()
     {
         CameraRotation.x += Input.GetAxis(MouseX) * MouseSensitivity;
