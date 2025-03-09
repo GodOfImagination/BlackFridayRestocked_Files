@@ -18,7 +18,7 @@ public class Gameplay : MonoBehaviour
 
 
     private float CountdownReady = 3;     // Number for how long the Ready Screen lasts.
-    private float CountdownTimer = 300;   // Number for how long the Timer lasts.
+    private float CountdownTimer = 120;   // Number for how long the Timer lasts. | 300 Seconds = 5 Minutes.
 
     private bool PlayerReady = false;     // Used to determine whether or not the Player has hit the Spacebar.
     private bool GameRunning = false;     // Used to determine whether or not the Game is currently running.

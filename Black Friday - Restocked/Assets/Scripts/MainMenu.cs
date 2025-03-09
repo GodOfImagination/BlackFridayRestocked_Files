@@ -3,8 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Screens"), Space(10)]
     public GameObject ScreenMenu;
     public GameObject ScreenHowToPlay;
+
     private void Start()
     {
         ScreenHowToPlay.SetActive(false);
