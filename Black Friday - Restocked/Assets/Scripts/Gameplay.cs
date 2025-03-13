@@ -72,6 +72,7 @@ public class Gameplay : MonoBehaviour
 
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
+                GameObject.Find("Player").GetComponent<PlayerController>().enabled = false;
             }
         }
     }
