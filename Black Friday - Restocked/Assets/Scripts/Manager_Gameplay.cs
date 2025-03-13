@@ -1,27 +1,28 @@
-using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using TMPro;
 
 public class Manager_Gameplay : MonoBehaviour
 {
     [Header("Screens"), Space(10)]
-    public GameObject ScreenReady;        // Screen that appears when the game starts.
-    public GameObject ScreenGameplay;     // Screen that appears when the game is running.
-    public GameObject ScreenConclusion;   // Screen that appears when the game ends.
+    public GameObject ScreenReady;                            // Screen that appears when the game starts.
+    public GameObject ScreenGameplay;                         // Screen that appears when the game is running.
+    public GameObject ScreenConclusion;                       // Screen that appears when the game ends.
 
     [Space(20)]
 
     [Header("Text"), Space(10)]
-    public TMP_Text TextReady;            // Text from the Ready Screen.
-    public GameObject TextHint;           // Text from the Ready Screen.
-    public TMP_Text TextTimer;            // Text from the Gameplay Screen.
+    public TMP_Text TextReady;                                // Text from the Ready Screen.
+    public GameObject TextHint;                               // Text from the Ready Screen.
+    public TMP_Text TextTimer;                                // Text from the Gameplay Screen.
+    public List<TMP_Text> TextItems = new List<TMP_Text>();   // Text from the Shopping List.
 
+    private float CountdownReady = 3;                         // Number for how long the Ready Screen lasts.
+    private float CountdownTimer = 120;                       // Number for how long the Timer lasts. | 300 Seconds = 5 Minutes.
 
-    private float CountdownReady = 3;     // Number for how long the Ready Screen lasts.
-    private float CountdownTimer = 120;   // Number for how long the Timer lasts. | 300 Seconds = 5 Minutes.
-
-    private bool PlayerReady = false;     // Used to determine whether or not the Player has hit the Spacebar.
-    private bool GameRunning = false;     // Used to determine whether or not the Game is currently running.
+    private bool PlayerReady = false;                         // Used to determine whether or not the Player has hit the Spacebar.
+    private bool GameRunning = false;                         // Used to determine whether or not the Game is currently running.
 
     private void Start()
     {
