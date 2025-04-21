@@ -2,26 +2,26 @@ using UnityEngine;
 
 public class Manager_Item : MonoBehaviour
 {
-    public int ItemPrice;
-    
-    private Manager_Score ScoreManager;
+    public int Price;
+    private Manager_Score Manager_Score;
     private bool InRange = false;
 
     private void Start()
     {
-        ScoreManager = GetComponent<Manager_Score>();
+        Manager_Score = FindFirstObjectByType<Manager_Score>();
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && InRange)
         {
-            ScoreManager.ItemCollected(ItemPrice);
+            Manager_Score.ItemCollected(Price);
         }
     }
 
     private void OnTriggerEnter(Collider Other)
     {
-        if (Other.tag == "Player")
+        if (Other.CompareTag("Player"))
         {
             InRange = true;
         }
@@ -29,7 +29,7 @@ public class Manager_Item : MonoBehaviour
 
     private void OnTriggerExit(Collider Other)
     {
-        if (Other.tag == "Player")
+        if (Other.CompareTag("Player"))
         {
             InRange = false;
         }

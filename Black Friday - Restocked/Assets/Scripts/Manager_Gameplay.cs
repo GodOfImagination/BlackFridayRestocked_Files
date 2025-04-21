@@ -6,28 +6,32 @@ using TMPro;
 public class Manager_Gameplay : MonoBehaviour
 {
     [Header("Screens"), Space(10)]
-    public GameObject ScreenReady;                            // Screen that appears when the game starts.
-    public GameObject ScreenGameplay;                         // Screen that appears when the game is running.
-    public GameObject ScreenConclusion;                       // Screen that appears when the game ends.
+    public GameObject Screen_Ready;                            // Screen that appears when the game starts.
+    public GameObject Screen_Gameplay;                         // Screen that appears when the game is running.
+    public GameObject Screen_Conclusion;                       // Screen that appears when the game ends.
 
     [Space(20)]
 
     [Header("Text"), Space(10)]
-    public TMP_Text TextReady;                                // Text from the Ready Screen.
-    public GameObject TextHint;                               // Text from the Ready Screen.
-    public TMP_Text TextTimer;                                // Text from the Gameplay Screen.
-    public List<TMP_Text> TextItems = new List<TMP_Text>();   // Text from the Shopping List.
+    public TMP_Text Text_Ready;                                // Text from the Ready Screen.
+    public GameObject TextObject_Hint;                         // Text from the Ready Screen.
+    public TMP_Text Text_Timer;                                // Text from the Gameplay Screen.
+    public List<TMP_Text> Text_Items = new List<TMP_Text>();   // Text from the Shopping List.
 
-    private float CountdownReady = 3;                         // Number for how long the Ready Screen lasts.
-    private float CountdownTimer = 120;                       // Number for how long the Timer lasts. | 300 Seconds = 5 Minutes.
+    private float Countdown_Ready = 3;                         // Number for how long the Ready Screen lasts.
+    private float Countdown_Timer = 20;                       // Number for how long the Timer lasts. | 300 Seconds = 5 Minutes.
 
-    private bool PlayerReady = false;                         // Used to determine whether or not the Player has hit the Spacebar.
-    private bool GameRunning = false;                         // Used to determine whether or not the Game is currently running.
+    private bool Is_PlayerReady = false;                       // Used to determine whether or not the Player has hit the Spacebar.
+    private bool Is_GameRunning = false;                       // Used to determine whether or not the Game is currently running.
+
+    private Manager_Score Manager_Score;                       // Used to determine what the Final Score is.
 
     private void Start()
     {
-        ScreenGameplay.SetActive(false);
-        ScreenConclusion.SetActive(false);
+        Screen_Gameplay.SetActive(false);
+        Screen_Conclusion.SetActive(false);
+
+        Manager_Score = FindFirstObjectByType<Manager_Score>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -37,43 +41,45 @@ public class Manager_Gameplay : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            TextHint.SetActive(false);
+            TextObject_Hint.SetActive(false);
             StartCoroutine(DelayStart());
         }
 
-        if (PlayerReady)
+        if (Is_PlayerReady)
         {
-            if (CountdownReady > 0)
+            if (Countdown_Ready > 0)
             {
-                CountdownReady -= Time.deltaTime;
-                TextReady.text = CountdownReady.ToString("N0");
+                Countdown_Ready -= Time.deltaTime;
+                Text_Ready.text = Countdown_Ready.ToString("N0");
             }
             else
             {
-                CountdownReady = 0;
-                TextReady.text = "GO!";
+                Countdown_Ready = 0;
+                Text_Ready.text = "GO!";
                 StartCoroutine(DelayRemoval());
-                ScreenGameplay.SetActive(true);
-                GameRunning = true;
-                GameObject.Find("Player").GetComponent<Player_Controller>().enabled = true;
+                Screen_Gameplay.SetActive(true);
+                Is_GameRunning = true;
+                GameObject.Find("Player").GetComponent<Player_Behavior>().enabled = true;
             }
         }
 
-        if (GameRunning)
+        if (Is_GameRunning)
         {
-            if (CountdownTimer > 0)
+            if (Countdown_Timer > 0)
             {
-                CountdownTimer -= Time.deltaTime;
-                DisplayTime(CountdownTimer);
+                Countdown_Timer -= Time.deltaTime;
+                DisplayTime(Countdown_Timer);
             }
             else
             {
-                CountdownTimer = 0;
-                ScreenConclusion.SetActive(true);
+                Countdown_Timer = 0;
+                Screen_Conclusion.SetActive(true);
+
+                Manager_Score.TotalScore();
 
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.visible = true;
-                GameObject.Find("Player").GetComponent<Player_Controller>().enabled = false;
+                GameObject.Find("Player").GetComponent<Player_Behavior>().enabled = false;
             }
         }
     }
@@ -82,18 +88,18 @@ public class Manager_Gameplay : MonoBehaviour
     {
         float Minutes = Mathf.FloorToInt(TimeToDisplay / 60);
         float Seconds = Mathf.FloorToInt(TimeToDisplay % 60);
-        TextTimer.text = $"{Minutes:00}:{Seconds:00}";
+        Text_Timer.text = $"{Minutes:00}:{Seconds:00}";
     }
 
     IEnumerator DelayStart()
     {
         yield return new WaitForSeconds(1);
-        PlayerReady = true;
+        Is_PlayerReady = true;
     }
 
     IEnumerator DelayRemoval()
     {
         yield return new WaitForSeconds(1);
-        ScreenReady.SetActive(false);
+        Screen_Ready.SetActive(false);
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player_Camera : MonoBehaviour
+public class Manager_Camera : MonoBehaviour
 {
     public float Sensitivity
     {
@@ -16,7 +16,7 @@ public class Player_Camera : MonoBehaviour
     const string MouseX = "Mouse X"; // Strings in direct code generate garbage, storing and re-using them creates no garbage.
     const string MouseY = "Mouse Y";
 
-    public Transform PlayerController;
+    public Transform Target;
 
     private void Update()
     {
@@ -28,6 +28,6 @@ public class Player_Camera : MonoBehaviour
         var QuaternionY = Quaternion.AngleAxis(CameraRotation.y, Vector3.left);
 
         transform.localRotation = QuaternionX * QuaternionY;
-        transform.position = PlayerController.position + new Vector3(0, 0.75f, 0); // Insures that the camera follows the Player.
+        transform.position = Target.position + new Vector3(0, 0.75f, 0); // Insures that the camera follows the Player.
     }
 }

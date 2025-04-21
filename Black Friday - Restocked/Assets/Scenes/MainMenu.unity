@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 21698091}
   - component: {fileID: 21698090}
   m_Layer: 5
-  m_Name: TextInfoRight
+  m_Name: Text_Info_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 73460427}
   - component: {fileID: 73460426}
   m_Layer: 5
-  m_Name: ButtonStart
+  m_Name: Button_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 102268312}
   - component: {fileID: 102268311}
   m_Layer: 5
-  m_Name: ButtonBack
+  m_Name: Button_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,8 +473,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 307902395}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ButtonBack
+        m_TargetAssemblyTypeName: Manager_MainMenu, Assembly-CSharp
+        m_MethodName: Button_Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   - component: {fileID: 172068258}
   - component: {fileID: 172068257}
   m_Layer: 5
-  m_Name: TextHeaderRight
+  m_Name: Text_Header_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 273945478}
   - component: {fileID: 273945477}
   m_Layer: 5
-  m_Name: TextHeaderBottom
+  m_Name: Text_Header_Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -824,8 +824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830eb2920b80ecb4e8a69220e0a85783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScreenMenu: {fileID: 1840475767}
-  ScreenHowToPlay: {fileID: 609975330}
+  Screen_Menu: {fileID: 1840475767}
+  Screen_HowToPlay: {fileID: 609975330}
 --- !u!4 &307902396
 Transform:
   m_ObjectHideFlags: 0
@@ -950,7 +950,7 @@ GameObject:
   - component: {fileID: 448437667}
   - component: {fileID: 448437666}
   m_Layer: 5
-  m_Name: TextInfoLeft
+  m_Name: Text_Info_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1089,7 +1089,7 @@ GameObject:
   - component: {fileID: 514989133}
   - component: {fileID: 514989132}
   m_Layer: 5
-  m_Name: ButtonText
+  m_Name: Button_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,7 +1223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609975331}
   m_Layer: 5
-  m_Name: ScreenHowToPlay
+  m_Name: Screen_HowToPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1362,7 +1362,7 @@ GameObject:
   - component: {fileID: 748844020}
   - component: {fileID: 748844019}
   m_Layer: 5
-  m_Name: ButtonText
+  m_Name: Button_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1499,7 +1499,7 @@ GameObject:
   - component: {fileID: 908630491}
   - component: {fileID: 908630490}
   m_Layer: 5
-  m_Name: ButtonQuit
+  m_Name: Button_Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1570,8 +1570,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 307902395}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ButtonQuit
+        m_TargetAssemblyTypeName: Manager_MainMenu, Assembly-CSharp
+        m_MethodName: Button_Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1905,7 +1905,7 @@ GameObject:
   - component: {fileID: 1711233212}
   - component: {fileID: 1711233211}
   m_Layer: 5
-  m_Name: TextHeaderLeft
+  m_Name: Text_Header_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2041,7 +2041,7 @@ GameObject:
   - component: {fileID: 1733428223}
   - component: {fileID: 1733428222}
   m_Layer: 5
-  m_Name: TextHeaderTop
+  m_Name: Text_Header_Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2177,7 +2177,7 @@ GameObject:
   - component: {fileID: 1779509267}
   - component: {fileID: 1779509266}
   m_Layer: 5
-  m_Name: ButtonText
+  m_Name: Button_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2311,7 +2311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1840475768}
   m_Layer: 5
-  m_Name: ScreenMenu
+  m_Name: Screen_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2353,7 +2353,7 @@ GameObject:
   - component: {fileID: 1995721626}
   - component: {fileID: 1995721625}
   m_Layer: 5
-  m_Name: ButtonText
+  m_Name: Button_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2490,7 +2490,7 @@ GameObject:
   - component: {fileID: 2024425607}
   - component: {fileID: 2024425606}
   m_Layer: 5
-  m_Name: ButtonHowToPlay
+  m_Name: Button_HowToPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2561,8 +2561,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 307902395}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: ButtonHowToPlay
+        m_TargetAssemblyTypeName: Manager_MainMenu, Assembly-CSharp
+        m_MethodName: Button_HowToPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

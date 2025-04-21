@@ -4,12 +4,12 @@ using UnityEngine.SceneManagement;
 public class Manager_MainMenu : MonoBehaviour
 {
     [Header("Screens"), Space(10)]
-    public GameObject ScreenMenu;
-    public GameObject ScreenHowToPlay;
+    public GameObject Screen_Menu;
+    public GameObject Screen_HowToPlay;
 
     private void Start()
     {
-        ScreenHowToPlay.SetActive(false);
+        Screen_HowToPlay.SetActive(false);
     }
 
     public void SceneLoader(int Number)
@@ -17,18 +17,18 @@ public class Manager_MainMenu : MonoBehaviour
         SceneManager.LoadScene(Number);
     }
 
-    public void ButtonHowToPlay()
+    public void Button_HowToPlay()
     {
-        ScreenMenu.SetActive(false);
-        ScreenHowToPlay.SetActive(true);
+        Screen_Menu.SetActive(false);
+        Screen_HowToPlay.SetActive(true);
     }
-    public void ButtonBack()
+    public void Button_Back()
     {
-        ScreenMenu.SetActive(true);
-        ScreenHowToPlay.SetActive(false);
+        Screen_Menu.SetActive(true);
+        Screen_HowToPlay.SetActive(false);
     }
 
-    public void ButtonQuit()
+    public void Button_Quit()
     {
         Application.Quit();
     }
